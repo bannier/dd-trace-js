@@ -289,7 +289,7 @@ describe('Plugin', function () {
             ['/hello', '/hello'],
             ['/hello/world', '/hello/[name]'],
             ['/hello/other', '/hello/other'],
-            ['/error/not_found', '/error/not_found', satisfies(pkg.version, '>=10') ? 404 : 500],
+            ['/error/not_found', '/404', satisfies(pkg.version, '>=10') ? 404 : 500],
             ['/error/get_server_side_props', '/error/get_server_side_props', 500]
           ]
           pathTests.forEach(([url, expectedPath, statusCode]) => {
